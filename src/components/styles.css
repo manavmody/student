@@ -1,0 +1,259 @@
+/* for login.js */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    background-color: #ff6600; /* Orange background */
+    color: #000; /* Black text */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .branding {
+    text-align: center;
+  }
+  
+  .branding h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .login-form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-form h2 {
+    font-size: 1.5rem;
+    color: #000; /* Black text */
+  }
+
+form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #000; /* Black border */
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #ff6600; /* Orange background */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #ff4400; /* Darker orange on hover */
+  }
+
+  .login-form {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Center-align text */
+}
+
+.login-form h2 {
+  font-size: 1.5rem;
+  color: #000; /* Black text */
+  margin-bottom: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Adjust styles for screens with a maximum width of 768px */
+  .login-form h2 {
+    font-size: 1.2rem; /* Decrease font size for smaller screens */
+  }
+}
+
+
+/*student details */
+/* src/StudentData.css */
+/* src/StudentData.css */
+.student-data-container {
+    background-color: #fff; /* White background */
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px; /* Increased margin for spacing */
+  }
+  
+  .header img {
+    width: 50px; /* Adjust the size as needed */
+    margin-right: 10px;
+  }
+  
+  .student-data-container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .student-data-container h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .student-data-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .student-data-container li {
+    margin: 10px 0;
+    font-size: 1.2rem;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .student-button {
+    background-color: #ff6600;
+    color: #fff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .student-button:hover {
+    background-color: #ff4400;
+  }
+  
+  /* Media query for screens smaller than 768px */
+  @media (max-width: 768px) {
+    .student-data-container {
+      padding: 10px;
+    }
+  
+    .student-data-container h1 {
+      font-size: 1.2rem;
+    }
+  
+    .student-data-container h2 {
+      font-size: 1.1rem;
+    }
+  
+    .student-data-container li {
+      font-size: 1rem;
+    }
+  
+    .button-container {
+      margin-top: 10px;
+    }
+  }
+  /* Dues.css */
+/* Dues.css */
+/* Dues.css */
+.dues-container {
+    background-color: #fff; /* White background */
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .dues-container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .dues-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dues-container label {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .dues-container input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .dues-container button {
+    background-color: #ff6600;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .dues-container button:hover {
+    background-color: #ff4400;
+  }
+  
+  /* Media query for screens smaller than 768px */
+  @media (max-width: 768px) {
+    .dues-container {
+      padding: 10px;
+    }
+  
+    .dues-container h1 {
+      font-size: 1.2rem;
+    }
+  
+    .dues-container label {
+      font-size: 1rem;
+    }
+  
+    .dues-container button {
+      margin-top: 10px;
+    }
+  }
+  
