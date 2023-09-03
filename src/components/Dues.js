@@ -5,9 +5,9 @@ const Dues = () => {
   const [selectedDues, setSelectedDues] = useState({});
 
   const duesData = [
-    { id: 1, name: 'Due 1' },
-    { id: 2, name: 'Due 2' },
-    { id: 3, name: 'Due 3' },
+    { id: 1, name: 'Due 1', amount: 100 },
+    { id: 2, name: 'Due 2', amount: 150 },
+    { id: 3, name: 'Due 3', amount: 200 },
   ];
 
   const handleCheckboxChange = (event) => {
@@ -19,8 +19,17 @@ const Dues = () => {
   };
 
   const handleSubmit = () => {
-    const checkedCount = Object.values(selectedDues).filter(Boolean).length;
-    alert(`Number of selected dues: ${checkedCount}`);
+    // Calculate the sum of selected checkboxes
+    let totalAmount = 0;
+    for (const [key, value] of Object.entries(selectedDues)) {
+      if (value) {
+        const due = duesData.find((due) => due.id === parseInt(key));
+        if (due) {
+          totalAmount += due.amount;
+        }
+      }
+    }
+    alert(`Total amount of selected dues: ${totalAmount}`);
   };
 
   return (
@@ -36,12 +45,12 @@ const Dues = () => {
                 checked={selectedDues[due.id] || false}
                 onChange={handleCheckboxChange}
               />
-              {due.name}
+              {due.name} (${due.amount})
             </label>
           </div>
         ))}
         <button type="button" onClick={handleSubmit}>
-          Submit
+          Calculate Total
         </button>
       </form>
     </div>
