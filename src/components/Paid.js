@@ -1,49 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './styles.css'
 
-const Paid= () => {
-  const [selectedDues, setSelectedDues] = useState({});
-
-  // Dues data defined within the component
-  const duesData = [
-    { id: 1, name: 'Due 1' },
-    { id: 2, name: 'Due 2' },
-    { id: 3, name: 'Due 3' },
+const Paid = () => {
+  const paidFees = [
+    { id: 1, type: 'Tuition Fee' },
+    { id: 2, type: 'Library Fee' },
+    { id: 3, type: 'Lab Fee' },
+    // Add more fee types as needed
   ];
 
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    setSelectedDues((prevSelectedDues) => ({
-      ...prevSelectedDues,
-      [name]: checked,
-    }));
-  };
-
-  const handleSubmit = () => {
-    const checkedCount = Object.values(selectedDues).filter(Boolean).length;
-    alert(`Number of selected dues: ${checkedCount}`);
+  const handleDownloadReceipt = (feeId) => {
+    // Implement your logic to download the receipt for the selected fee here
+    // You can use window.location or a library for file downloads
+    alert(`Downloading receipt for fee ID ${feeId}`);
   };
 
   return (
-    <div>
-      <h1>Dues</h1>
-      <form>
-        {duesData.map((due) => (
-          <div key={due.id}>
-            <label>
-              <input
-                type="checkbox"
-                name={due.id}
-                checked={selectedDues[due.id] || false}
-                onChange={handleCheckboxChange}
-              />
-              {due.name}
-            </label>
-          </div>
-        ))}
-        <button type="button" onClick={handleSubmit}>
-          Submit
-        </button>
-      </form>
+    <div className="paid-container">
+      <h1>Paid Fees</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Fee Type</th>
+            <th>Download Receipt</th>
+          </tr>
+        </thead>
+        <tbody>
+          {paidFees.map((fee) => (
+            <tr key={fee.id}>
+              <td>{fee.type}</td>
+              <td>
+                <button onClick={() => handleDownloadReceipt(fee.id)}>Download</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
